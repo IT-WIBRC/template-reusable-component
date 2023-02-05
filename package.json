@@ -1,6 +1,6 @@
 {
   "name": "@wibr/template-reusable-component",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "files": [
     "dist"
@@ -18,7 +18,8 @@
     "dev": "vite",
     "lint": "eslint",
     "lint:fix": "eslint . --fix",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types && npm run build:style",
+    "build:style": "postcss src/style.css -o dist/style.css",
     "preview": "vite preview",
     "serve": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",

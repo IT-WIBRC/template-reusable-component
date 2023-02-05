@@ -8,4 +8,8 @@ describe("TestComponent", () => {
   it("should render correctly", () => {
     expect(wrapper.exists()).toBe(true);
   });
+
+  it("should have the awaited text", () => {
+    expect(wrapper.text()).toBe("Try component");
+  });
 });
